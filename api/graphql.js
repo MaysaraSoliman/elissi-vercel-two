@@ -1,6 +1,8 @@
 import { createServer } from 'json-graphql-server';
-import db from '../db.cjs';
+import db from '../db.cjs'; // Adjust path if necessary
 
 const server = createServer({ db });
 
-export default server.createHandler();
+export default function handler(req, res) {
+    return server.createHandler()(req, res);
+}

@@ -8,7 +8,7 @@
       }
     },
     {
-      "src": "api/graphql-server.js",
+      "src": "api/graphql.js",
       "use": "@vercel/node",
       "config": {
         "includeFiles": "db.cjs"
@@ -18,7 +18,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/graphql-server.js"
+      "destination": "/api/graphql.js"
     },
     {
       "source": "/(.*)",
