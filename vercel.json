@@ -6,9 +6,20 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "src": "api/graphql-server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "db.cjs"
+      }
     }
   ],
   "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/graphql-server.js"
+    },
     {
       "source": "/(.*)",
       "destination": "/"
